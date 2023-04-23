@@ -1,0 +1,50 @@
+*, ::before, ::after {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box; /* pour prendre en charge les margin et padding */
+}
+body{
+    background: #f1f1f1;
+
+}
+.container{
+    max-width: 800px;  /* Largeur pour ecran PC */
+    margin: 0 45%; /* pour centrer le contenu (try with auto as failed)*/
+    padding : 40px; /* pour centrer le contenu ??*/
+}
+.slider img{
+    max-width: 100%; /* pour prendre toute la largeur du container */
+    display: none;
+}
+img.active{ /*on affiche que l'image avec la classe active*/
+    display: block;
+    border: 3px dashed purple; /* pointillé pourpre autour des images */
+
+    animation: fade 1s ease-in-out; /*fondu entrant/sortant de 1s*/
+}
+
+/*ANIMATION*/
+@keyframes fade{
+    from{
+        opacity: 0; /*on commence avec une opacité de 0*/
+    }
+    to{
+        opacity: 1; /*on finit avec une opacité de 1*/
+    }
+}
+
+/*NAVIGATION <- -> */
+.cont-btn{
+    width: 100%;
+    height: auto;
+    border: 2px solid green; /* bordure verte autour des boutons*/
+    box-shadow: 0 10px 10px rgba(0,0,0,0.3); /*ombre portée noire opacité 30%*/ ;
+    display: flex; /*alignement des "flèches"*/
+    justify-content: center; /*on centre les "flèches"*/
+}
+
+.btn-nav{
+   font-size: 40px; /* taille des fleches*/
+   margin: 0 15px;
+   cursor: crosshair; /* curseur en forme de croix*/
+}
