@@ -38,3 +38,13 @@ function SlidePrecedente()  /*code pour la flèche de gauche*/
 }
 
 precedent.addEventListener('click', SlidePrecedente); /*on écoute le click sur le bouton précédent*/
+
+function keyPress(e){
+    if(e.key === 'ArrowLeft' /*|| e.keyCode === 37*/){
+        SlidePrecedente();
+    }
+    else if(e.key === 'ArrowRight' /*|| e.keyCode === 39*/){
+        SlideSuivante();
+    }
+}
+document.addEventListener('keydown', keyPress);
